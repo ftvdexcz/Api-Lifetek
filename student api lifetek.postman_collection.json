@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "9c418d35-afa6-4383-8275-04d7b9c04454",
+		"name": "student api lifetek",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17240163"
+	},
+	"item": [
+		{
+			"name": "create student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Long\",\r\n    \"sex\": \"Male\",\r\n    \"dob\": \"2001-01-12\",\r\n    \"address\": \"Dong Da, Ha Noi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8888/student",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"student"
+					]
+				},
+				"description": "- name is required\n- sex is required, Male or Female only\n- dob is optional, dob format: yyyy-mm-dd\n- address is optional"
+			},
+			"response": []
+		},
+		{
+			"name": "get all students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8888/student",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get student by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8888/student/63ea7899a2364d3a04448dd9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"student",
+						"63ea7899a2364d3a04448dd9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update student by id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"Phuong Mai, Dong Da, Ha Noi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8888/student/63ea7899a2364d3a04448dd9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"student",
+						"63ea7899a2364d3a04448dd9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete student by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8888/student/63ea7899a2364d3a04448dd9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"student",
+						"63ea7899a2364d3a04448dd9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
