@@ -72,4 +72,22 @@ module.exports = {
       });
     }
   },
+
+  deleteStudent: async function(req, res){
+    try{
+      const student = await Student.findByIdAndDelete(req.params.id);
+      if (!student) {
+        throw new Error('Id not found');
+      }
+      res.status(204).json({
+        status: 'success',
+        data: null,
+      });
+    }catch(error){
+      res.status(400).json({
+        status: 'error',
+        message: error.message
+      });
+    }
+  },
 }
