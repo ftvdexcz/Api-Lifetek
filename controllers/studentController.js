@@ -49,4 +49,27 @@ module.exports = {
       });
     }
   },
+
+  updateStudent: async function(req, res){
+    try{
+      const updatedStudent = await Student.findByIdAndUpdate(req.params.id, req.body, {
+        new: true, // return new document after update
+        runValidators: true,
+      });
+      if (!updatedStudent) {
+        throw new Error('Id not found');
+      }
+      res.status(200).json({
+        status: 'success',
+        data: {
+          student: updatedStudent
+        }
+      });
+    }catch(error){
+      res.status(400).json({
+        status: 'error',
+        message: error.message
+      });
+    }
+  },
 }
