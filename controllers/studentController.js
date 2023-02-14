@@ -31,4 +31,22 @@ module.exports = {
       });
     }
   },
+
+  getStudent: async function(req, res){
+    try{
+      const student = await Student.findById(req.params.id);
+
+      res.status(200).json({
+        status: 'success',
+        data: {
+          student
+        }
+      });
+    }catch(error){
+      res.status(400).json({
+        status: 'error',
+        message: error.message
+      });
+    }
+  },
 }
